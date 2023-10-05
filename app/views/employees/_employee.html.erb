@@ -8,5 +8,9 @@
     <strong>Last name:</strong>
     <%= employee.last_name %>
   </p>
+  
+  <% if employee.profile_picture.present? %>
+    <%= image_tag employee.profile_picture %>
+  <% end %>
 
 </div>
