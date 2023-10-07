@@ -6,6 +6,8 @@
 
   <%= form.input :category %>
 
+  <%= form.association :employee, to_label: :first_name %>
+
   <div>
     <%= form.submit :class => "btn btn-primary" %>
   </div>
