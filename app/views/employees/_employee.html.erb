@@ -1,13 +1,9 @@
 <div id="<%= dom_id employee %>">
   <p>
-    <strong>First name:</strong>
-    <%= employee.first_name %>
+    <strong>Full Name:</strong>
+    <%= employee.to_label %>
   </p>
 
-  <p>
-    <strong>Last name:</strong>
-    <%= employee.last_name %>
-  </p>
   
   <% if employee.profile_picture.present? %>
     <%= image_tag employee.profile_picture %>
