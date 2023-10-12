@@ -11,4 +11,7 @@
   <div class="form-actions">
     <%= f.submit :class => 'btn btn-primary' %>
   </div>
+
+  <%= f.association :employees, as: :check_boxes %>
+
 <% end %>

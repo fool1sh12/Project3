@@ -20,3 +20,7 @@
   margin: 1rem 0;
 
 }
+
+fieldset legend {
+  float: none;
+}
