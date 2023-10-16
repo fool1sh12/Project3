@@ -1,0 +1,48 @@
+<h1>Dashboard</h1>
+
+<h2>Device Usage</h2>
+
+<table class="table table-striped table-bordered">
+ <thead>
+    <tr>
+      <th>Name</th>
+      <th>Total</th>
+      <th>Assigned</th>
+      <th>Available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Category.all.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Software Compliance</h2>
+
+<table class="table table-striped table-bordered">
+ <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lease Count</th>
+      <th>Employee Count</th>
+      <th>Compliant</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Software.all.each do |software| %>
+      <tr>
+        <td><%= software.name %></td>
+        <td><%= software.license_count %></td>
+        <td><%= software.employees.uniq.count %></td>
+        <td><%= software.compliant? %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
