@@ -15,9 +15,9 @@
     <% Category.all.each do |category| %>
       <tr>
         <td><%= category.name %></td>
-        <td><%= Device.all.where(:category => category.name).count %></td>
-        <td><%= Device.where(:category => category.name).count %></td>
-        <td><%= Device.where(:employee_id => nil).count %></td>
+        <td><%= Device.all.where(:category => category).count %></td>
+        <td><%= Device.where(:category => category).where.not(:employee_id => nil).count %></td>
+        <td><%= category.devices.where(:employee_id => nil).count %></td>
       </tr>
     <% end %>
   </tbody>
