@@ -1,6 +1,6 @@
 class Device < ApplicationRecord
   belongs_to :employee
-  belongs_to :categories
+  belongs_to :category
 
   def total
     all.count
