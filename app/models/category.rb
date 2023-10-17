@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  has_many :categories, through: :devices
+  has_many :devices
 end
