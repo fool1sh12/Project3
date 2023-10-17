@@ -15,7 +15,7 @@
     <% Category.all.each do |category| %>
       <tr>
         <td><%= category.name %></td>
-        <td></td>
+        <td><%= Device.all.where(:category => category.name).count %></td>
         <td></td>
         <td></td>
       </tr>
