@@ -16,6 +16,6 @@
 
   <p>
     <strong>Assigned to:</strong>
-    <%= link_to  device.employee.to_label %>
-
+    <%= link_to device.employee.to_label, employee_path(device.employee) %>
+    
 </div>
