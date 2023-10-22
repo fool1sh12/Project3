@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-
+#Category Creation
 category_hash = [
   {
     :name => "Smart Phone"
@@ -21,6 +21,7 @@ category_hash = [
 
 Category.create(category_hash)
 
+#Manufacturer Creation
 manufact_hash = [
   {
     :name => "Apple",
@@ -38,12 +39,14 @@ manufact_hash = [
 
 Manufacturer.create(manufact_hash)
 
+#Employee Creation
 1.upto(5) do |index|
   Employee.create(
     :first_name => "Employee #{index}"
   )
 end
 
+#Device Creation and Assigning
 1.upto(5) do |index|
   Device.create(
     {:name => "Smart Phone #{index}",
@@ -62,6 +65,7 @@ end
   )
 end
 
+#Random Software Creation
 1.upto(5) do |index|
   software_num = rand(5) + 1
   license_num = rand(5)
@@ -70,4 +74,11 @@ end
     :license_count => license_num }
   )
 end 
+
+#Random Software Assigning -- Three Times
+3.times do
+  Employee.all.each do |employee|
+    employee.softwares << Software.find(rand(1..5))
+  end
+end
 
