@@ -38,9 +38,36 @@ manufact_hash = [
 
 Manufacturer.create(manufact_hash)
 
-5.times do |index|
+1.upto(5) do |index|
   Employee.create(
     :first_name => "Employee #{index}"
   )
 end
+
+1.upto(5) do |index|
+  Device.create(
+    {:name => "Smart Phone #{index}",
+    :employee_id => index,
+    :category_id => 1,
+    :manufacturer_id => 1 }
+  )
+end
+
+1.upto(5) do |index|
+  Device.create(
+    {:name => "Laptop #{index}",
+    :employee_id => index,
+    :category_id => 2,
+    :manufacturer_id => 2 }
+  )
+end
+
+1.upto(5) do |index|
+  software_num = rand(5) + 1
+  license_num = rand(5)
+  Software.create(
+    {:name => "Software #{software_num}",
+    :license_count => license_num }
+  )
+end 
 
