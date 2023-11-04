@@ -6,4 +6,8 @@ class Device < ApplicationRecord
   def total
     all.count
   end
+
+  def label
+    "#{name} (#{manufacturer.name}/#{category.name})"    
+  end
 end
