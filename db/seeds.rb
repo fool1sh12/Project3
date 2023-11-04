@@ -50,22 +50,21 @@ end
 1.upto(3) do |i|
   1.upto(3) do |j|
     1.upto(3) do |k|
+      num = rand(1..100)
       Device.create(
-        {:name => "Device #{k}",
+        {:name => "Device #{num}",
         :category_id => i,
         :manufacturer_id => j}
       )
     end
   end
 end  
-#1.upto(5) do |index|
- # Device.create(
-  #  {:name => "Laptop #{index}",
-   #:employee_id => index,
-   #:category_id => 2,
-   #:manufacturer_id => 2 }
- # )
-#end
+
+Employee.all.each do |employee|
+  3.times do
+    employee.devices << Device.all.sample
+  end
+end
 
 #Random Software Creation
 1.upto(5) do |index|
