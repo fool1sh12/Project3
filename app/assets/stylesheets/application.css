@@ -24,3 +24,8 @@
 fieldset legend {
   float: none;
 }
+
+#navbarNavDropdown {
+  display: flex;
+  justify-content: space-between;
+}
