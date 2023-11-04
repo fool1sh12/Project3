@@ -47,14 +47,17 @@ Manufacturer.create(manufact_hash)
 end
 
 #Device Creation and Assigning
-1.upto(3) do |index|
-  Device.create(
-    {:name => "Device #{index}",
-    :category_id => 1,
-    :manufacturer_id => 1 }
-  )
-end
-
+1.upto(3) do |i|
+  1.upto(3) do |j|
+    1.upto(3) do |k|
+      Device.create(
+        {:name => "Device #{k}",
+        :category_id => i,
+        :manufacturer_id => j}
+      )
+    end
+  end
+end  
 #1.upto(5) do |index|
  # Device.create(
   #  {:name => "Laptop #{index}",
