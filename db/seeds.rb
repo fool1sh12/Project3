@@ -47,23 +47,22 @@ Manufacturer.create(manufact_hash)
 end
 
 #Device Creation and Assigning
-1.upto(5) do |index|
+1.upto(3) do |index|
   Device.create(
-    {:name => "Smart Phone #{index}",
-    :employee_id => index,
+    {:name => "Device #{index}",
     :category_id => 1,
     :manufacturer_id => 1 }
   )
 end
 
-1.upto(5) do |index|
-  Device.create(
-    {:name => "Laptop #{index}",
-    :employee_id => index,
-    :category_id => 2,
-    :manufacturer_id => 2 }
-  )
-end
+#1.upto(5) do |index|
+ # Device.create(
+  #  {:name => "Laptop #{index}",
+   #:employee_id => index,
+   #:category_id => 2,
+   #:manufacturer_id => 2 }
+ # )
+#end
 
 #Random Software Creation
 1.upto(5) do |index|
