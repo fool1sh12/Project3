@@ -59,7 +59,7 @@ end
     end
   end
 end  
-
+ 
 Employee.all.each do |employee|
   3.times do
     employee.devices << Device.all.sample
