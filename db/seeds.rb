@@ -67,10 +67,9 @@ end
 
 #Random Software Creation
 1.upto(5) do |index|
-  software_num = rand(5) + 1
   license_num = rand(5)
   Software.create(
-    {:name => "Software #{software_num}",
+    {:name => "Software #{index}",
     :license_count => license_num }
   )
 end 
