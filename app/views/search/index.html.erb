@@ -4,8 +4,9 @@
   <%= form.label :query, "Search for:" %>
   <%= form.text_field :query, :value => @query %>
   
-  <%= form.label :query, "Search for:" %>
-  <%= form.number_field :category_id, :value => @category_id %>
+  <%= form.label :query, "Category:" %>
+  <%= form.select :category_id, Category.all.map { |c| [c.name, c.id] }, :selected => @category_id %>
+  
   <%= form.submit "Search" %>
 <% end %>
 
