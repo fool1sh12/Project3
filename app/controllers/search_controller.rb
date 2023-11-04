@@ -3,10 +3,10 @@ class SearchController < ApplicationController
     @query = params[:query]
     @category_id = params[:category_id]
     
-    if @category_id.present? 
-      @category = Category.find(@category_id)
-    end
+    @devices = Device.where("name like '%#{@query}%'")
 
-    @devices = Device.where("name like '%#{@query}%'").where(category_id: @category_id)
+    if @category_id.present? 
+      @devices = @devices.where(category_id: @category_id)
+    end
   end
 end
