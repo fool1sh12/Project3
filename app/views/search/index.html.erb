@@ -1,13 +1,22 @@
 <h1>Search</h1>
 
 <%= form_with url: "/search", method: :get do |form| %>
-  <%= form.label :query, "Search for:" %>
-  <%= form.text_field :query, :value => @query %>
+  <div class="mt-3">
+    <%= form.label :query, "Search for:" %>
+    <%= form.text_field :query, :value => @query, :class => "form-control" %>
+  </div>
+
+  <div class="mt-3">
+    <%= form.label :query, "Category:" %>
+    <%= form.select :category_id, Category.all.map { |c| [c.name, c.id] }, 
+      { :selected => @category_id, :include_blank => true }, 
+      { :class => "form-select" } %>
+  </div>
   
-  <%= form.label :query, "Category:" %>
-  <%= form.select :category_id, Category.all.map { |c| [c.name, c.id] }, :selected => @category_id, :include_blank => true  %>
-  
-  <%= form.submit "Search" %>
+  <div class="mt-3">
+    <%= form.submit "Search", :class => "btn btn-outline-primary" %>
+  </div>
+
 <% end %>
 
 <% if @query.present? %>
