@@ -46,19 +46,34 @@ Manufacturer.create(manufact_hash)
   )
 end
 
+
 #Device Creation and Assigning
-1.upto(3) do |i|
-  1.upto(3) do |j|
-    1.upto(3) do |k|
+Category.all.each do |category|
+  Manufacturer.all.each do |manufacturer|
+    3.times do |i|
       num = rand(1..100)
       Device.create(
         {:name => "Device #{num}",
-        :category_id => i,
-        :manufacturer_id => j}
+        :category_id => category.id,
+        :manufacturer_id => manufacturer.id}
       )
     end
   end
 end  
+
+#Device Creation and Assigning
+#1.upto(3) do |i|
+ # 1.upto(3) do |j|
+  #  1.upto(3) do |k|
+   #   num = rand(1..100)
+    #  Device.create(
+     #   {:name => "Device #{num}",
+      #  :category_id => i,
+       # :manufacturer_id => j}
+     # )
+   # end
+ # end
+#end  
  
 Employee.all.each do |employee|
   3.times do
